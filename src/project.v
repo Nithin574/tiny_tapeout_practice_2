@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_example (
+module tt_um_Nithin574 (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -24,6 +24,6 @@ module tt_um_example (
   // List all unused inputs to prevent warnings
     wire _unused = &{ena, uio_in[7:1], ui_in[7:1], ui_out[7:1], 1'b0};
 
-    melay_11011_non_overlapping fsm(clk, rst_n, ui_in, ui_out);
+    melay_11011_non_overlapping fsm(clk, rst_n, ui_in[0], ui_out[0]);
 
 endmodule
