@@ -26,7 +26,7 @@ module melay_11011_non_overlapping(clk, rst, sequence_in, out);
         s2: {next_state,out} = sequence_in ? {s2,1'b0} : {s3,1'b0} ;
         s3: {next_state,out} = sequence_in ? {s4,1'b0} : {s0,1'b0} ;
         s4: {next_state,out} = sequence_in ? {s0,1'b1} : {s0,1'b0} ;
-        default: next_state = s0;
+        default: {next_state,out} = {s0,1'b0} ;
       endcase
     end
   
