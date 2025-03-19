@@ -2,7 +2,6 @@
  * Copyright (c) 2024 Your Name
  * SPDX-License-Identifier: Apache-2.0
  */
-`include "melay_11011_non_overlapping.v"
 `default_nettype none
 
 module tt_um_Nithin574 (
@@ -23,7 +22,7 @@ wire detect_out;
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
-    wire _unused = &{ena, uio_in[7:1], ui_in[7:1], 1'b0};
+    wire _unused = &{ena, uio_in, ui_in[7:1], 1'b0};
 
     melay_11011_non_overlapping fsm(clk, rst_n, ui_in[0], detect_out);
 
